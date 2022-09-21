@@ -56,3 +56,8 @@
     width: 14%;
     text-align: center;
 }
+.line{
+    height: 3px;
+    width: 100%;
+    background: #005197;
+}
