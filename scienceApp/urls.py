@@ -4,5 +4,5 @@ from . import views
 app_name = 'scienceApp' # 设置应用名
 
 urlpatterns = [
-    path('scienceApp/', views.science, name='science'),
+    path('science/', views.science, name='science'),
 ]
