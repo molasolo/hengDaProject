@@ -1,5 +1,5 @@
 .top{
-    margin: 10px;
+    margin-top: 10px;
 }
 .phone{
     color: #666;
@@ -9,6 +9,20 @@
     color: #666;
     float: right;
 }
+.ant:link{
+    text-decoration: none;
+}
+.ant:visited{
+    text-decoration: none;
+}
+.ant:hover{
+    text-decoration: none;  
+}
+.ant:active{
+    text-decoration:none;   
+}
+
+
 
 /* 导航条默认属性设置 */
 .navbar-default{
@@ -60,4 +74,77 @@
     height: 3px;
     width: 100%;
     background: #005197;
+}
+.model-details-title{
+    padding: 15px 0px;
+    font-size: 18px;
+    border-bottom: 1px #005197 solid;
+    color: #005197;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+/* 文字段落 */
+.model-details p{
+	line-height:30px;
+	text-indent:2em;
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+/* 主体图像 */
+.model-details img{
+	margin:0px auto;
+}
+#map-footer{
+    background-color: #3a3a3a;
+}
+#map-footer dl{
+    text-align: center;
+    margin-top: 40px;
+}
+#map-footer dt{
+    padding: 3px;
+    color: #fff;
+}
+#map-footer dd{
+    padding: 3px;
+}
+#map-footer p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+#map-footer a{
+    color: #A6A6A6;
+    font-size: 13px;
+}
+#map-footer a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+#wx{
+    text-align: center;
+}
+.qrimg{
+    max-width: 170px;
+}
+#patent-footer{
+    text-align: center;
+    background-color: #3a3a3a;
+}
+#patent-footer p{
+    margin-top: 10px;
+    padding-right: 80px;
+    color: #8d8d8d;
+    font-size: 11px;
+}
+/* 二级菜鼠标移过时属性 */
+.navbar-default .navbar-nav li ul a:hover{
+    color: #fff;
+    background-color: #005197;
+}
+/* 一级菜单激活时二级菜单鼠标移过时属性 */
+.navbar-default .navbar-nav li.active ul a:hover{
+    color: #fff;
+    background-color: #022a4d;
 }
