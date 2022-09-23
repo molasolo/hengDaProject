@@ -6,9 +6,13 @@ from django.shortcuts import HttpResponse
 def survey(request):
     # html = '<html><body>企业概况</body></html>'
     # return HttpResponse(html)
-    return render(request, 'survey.html', {'active_menu': 'about',})
+    return render(request, 'survey.html', 
+        {'active_menu': 'about', 'sub_menu': 'survey', })
+
 
 def honor(request):
     # html = '<html><body>荣誉资质</body></html>'
     # return HttpResponse(html)
-    return render(request, 'honor.html', {'active_menu': 'about'})
+    return render(request, 'honor.html',  
+        {'active_menu': 'about', 'sub_menu': 'honor', })
+          

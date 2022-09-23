@@ -148,3 +148,44 @@
     color: #fff;
     background-color: #022a4d;
 }
+.row-3{
+    margin-top: 30px;
+}
+.model-title{
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    padding: 15px 0px;
+    background-color: #005197;
+    margin-top: 25px;
+}
+.model-list li{
+    text-align: center;
+    background-color: #f6f6f6;
+    font-size: 16px;
+}
+.model-list li a{
+    color: #545353;
+}
+.model-list li a:hover{
+    text-decoration: none;
+    color: #005197;
+}
+/*侧边导航栏激活样式*/
+.model-list li.active{
+    text-align: center;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    border-color: #ddd;
+}
+/*侧边导航栏激活状态下鼠标移过时样式*/
+.model-list li.active:hover{
+    text-align: center;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    border-color: #ddd;
+}
+/*侧边导航栏激活状态时链接样式*/
+.model-list li.active a{
+    color: #005197;
+}

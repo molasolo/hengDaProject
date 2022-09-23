@@ -6,6 +6,36 @@
 {% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <img class="img-responsive model-img" src="{% static 'img/about.jpg' %}">
+    </div>
+</div>
+<div class="container">
+    <div class="row row-3">
+        <!-- 侧边导航栏 -->
+        <div class="col-md-3">
+            <div class="model-title">
+                公司简介
+            </div>
+            <div class="model-list">
+                <ul class="list-group">
+                    <li class="list-group-item" id="survey">
+                        <a href="{% url 'aboutApp:survey' %}">企业概况</a>
+                    </li>
+                    <li class="list-group-item" id="honor">
+                        <a href="{% url 'aboutApp:honor' %}">荣誉资质</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 说明文字和图片 -->
+        <div class="col-md-9">
+            <div class="model-details-title">
+                荣誉资质
+            </div>
+        </div>
+    </div>
 
-
+</div>
 {% endblock %}
