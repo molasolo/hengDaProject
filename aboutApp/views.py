@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from .models import Award
 
 
 # Create your views here.
@@ -13,6 +14,10 @@ def survey(request):
 def honor(request):
     # html = '<html><body>荣誉资质</body></html>'
     # return HttpResponse(html)
-    return render(request, 'honor.html',  
-        {'active_menu': 'about', 'sub_menu': 'honor', })
+    awards = Award.objects.all()
+    return render(request, 'honor.html',  {
+            'active_menu': 'about', 
+            'sub_menu': 'honor', 
+            'awards': awards,
+        })
           

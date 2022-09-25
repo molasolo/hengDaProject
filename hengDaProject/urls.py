@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from homeapp.views import home  # 导入首页对应的视图处理函数
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,7 @@ urlpatterns = [
     path('scienceApp/', include('scienceApp.urls')),
     path('serviceApp/', include('serviceApp.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                        document_root=settings.MEDIA_ROOT)
