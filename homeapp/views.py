@@ -6,4 +6,4 @@ from django.shortcuts import HttpResponse
 def home(request):
     # html = '<html><body>首页</body></html>'
     # return HttpResponse(html)
-    return render(request,'home.html')
+    return render(request,'home.html', {'active_menu': 'home', })
