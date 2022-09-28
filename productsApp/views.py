@@ -4,6 +4,7 @@ from django.shortcuts import HttpResponse
 
 from productsApp.models import Product
 from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -59,12 +60,23 @@ def products(request, productName):
             left = page_range[(page-3) if (page-3) > 0 else 0: page-1]
             if left[0] > 2:
                 left_has_more = True
-            if left[0] >1:
+            if left[0] > 1:
+                first = True
+        else:
+            left = page_range[(page-3) if (page-3) > 0 else 0:page-1]   
+            right = page_range[page:page+2]         
+            if left[0] > 2:
+                left_has_more = True
+            if left[0] > 1:
                 first = True
             if right[-1] < total_pages - 1:
                 right_has_more = True
             if right[-1] < total_pages:
                 last = True
+            # if right[-1] < total_pages - 1:
+            #     right_has_more = True
+            # if right[-1] < total_pages:
+            #     last = True
         pageData = {                                 
             'left':left,
             'right':right,
@@ -84,3 +96,12 @@ def products(request, productName):
             'productList': productList,
             'pageData': pageData,
         })
+
+def productDetail(request, id):
+    product = get_object_or_404(Product, id=id)
+    product.views += 1
+    product.save()
+    return render(request, 'productDetail.html', {
+        'active_menu': 'products',
+        'product': product,
+    })
