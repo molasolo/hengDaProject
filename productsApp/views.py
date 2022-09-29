@@ -32,14 +32,18 @@ def products(request, productName):
     else:
         productName = '人脸识别解决方案'
     
+    # 待分页的数据
     productList = Product.objects.all().filter(
         productType=productName).order_by('-publishDate')
 
+    # 获取分页器对象,把productList数据按照2个一页显示
     p = Paginator(productList, 2)
+    # p.num_pages分页后的页面总数
     if p.num_pages <= 1:
         pageData = ''
     else:
-        page = int(request.GET.get('page', 1))
+        page = int(request.GET.get('page', 1))  # 以page为键得到默认的页面1
+        # 分类器方法page()接受一个必填参数即页码号，返回一个当前页对象，若不提供将返回一个 TypeError 错误
         productList = p.page(page)
         left = []
         right = []
@@ -48,7 +52,7 @@ def products(request, productName):
         first = False
         last = False
         total_pages = p.num_pages
-        page_range = p.page_range
+        page_range = p.page_range   #分页后的页码范围page_range从1开始，不包括右,左闭右开
         if page == 1:
             right = page_range[page: page+2]
             print(total_pages)

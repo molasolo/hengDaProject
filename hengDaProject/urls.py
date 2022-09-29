@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 #from itertools import product
+import django
 from django.contrib import admin
 from django.urls import path
 from homeapp.views import home  # 导入首页对应的视图处理函数
@@ -30,6 +31,7 @@ urlpatterns = [
     path('productsApp/', include('productsApp.urls')),
     path('scienceApp/', include('scienceApp.urls')),
     path('serviceApp/', include('serviceApp.urls')),
+    path('ueditor/', include('DjangoUeditor.urls')),
 ]
 
 if settings.DEBUG:
